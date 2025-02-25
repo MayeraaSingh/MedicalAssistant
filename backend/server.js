@@ -1,16 +1,15 @@
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send("Medical Assistant Backend is Running...");
+app.get("/api", (req, res) => {
+    res.json({ message: "Medical Assistant Backend is Running..." });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
