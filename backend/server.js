@@ -3,6 +3,7 @@ const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
 const extractTextFromImage = require("./vision");
+const savePrescription = require("./firestore");
 
 const app = express();
 app.use(cors());
@@ -29,9 +30,15 @@ app.post("/extract-text", upload.single("image"), async (req, res) => {
   const imagePath = path.join(__dirname, "uploads", req.file.filename);
   const result = await extractTextFromImage(imagePath);
 
-  res.json(result);
+  if (result.error) return res.status(500).json(result);
+
+  // Save extracted text to Firestore
+  const savedData = await savePrescription(result.text);
+
+  res.json({ text: result.text, savedData });
 });
 
+// Start server
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
