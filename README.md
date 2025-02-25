@@ -9,12 +9,14 @@ Before running the project, ensure you have the following installed:
 - Google Cloud Account with Vision API and Vertex AI enabled
 - Google Cloud SDK: Install here(https://cloud.google.com/sdk/docs/install)
 - Firebase CLI (for Firestore & deployment)
+  ```
     npm install -g firebase-tools
-
+  ```
 2️⃣ Clone the Repository
+```
   git clone https://github.com/MayeraaSingh/MedicalAssistant.git
   cd MedicalAssistant
-
+```
 
 3️⃣ Setup Google Cloud Credentials
 1. Create a Service Account in [Google Cloud Console](https://console.cloud.google.com/).
@@ -25,23 +27,30 @@ Before running the project, ensure you have the following installed:
 
 4️⃣ Install Dependencies
 
-Backend Setup
+Backend Setup :
+```
 cd backend
 npm install
-
-Frontend Setup
+```
+Frontend Setup: 
+```
 cd ../frontend
 npm install
+```
 
 🚀 Running the Project
 1️⃣ Start the Backend
+```
 cd backend
 npm run dev
+```
 This starts the Express server on port 3000.
 
 2️⃣ Start the Frontend
+```
 cd frontend
 npm run dev
+```
 This starts the React app on localhost:5173.
 
 📂 Project Structure
