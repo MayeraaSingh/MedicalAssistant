@@ -1,3 +1,6 @@
+***this code upto the latest commit will not run because it is incomplete due to time constraints***
+***only vision api and firestore has been incorporated so far, vertex ai is still pending***
+
 Medical Assistant: AI-Powered Prescription Analysis
 
 ⚙️ Environment Setup
